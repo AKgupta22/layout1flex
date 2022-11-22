@@ -1,8 +1,9 @@
-@import './var.scss';
+@use 'var' as *;
 
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-family: $font;
 }
 
 .navbar {
@@ -13,21 +14,22 @@
     ul {
         display: $display;
         @include margin;
-        width: 84%
+        width: 85%;
+        justify-content: flex-start;
     }
 
     ul {
         li {
             color: $licolor;
-            font-size: 22px;
+            font-size: 17px;
             font-weight: 300;
             list-style: none;
-            margin: 19px 2px;
-            width: 6.1%
+            margin: 1rem 0px;
+            padding: 0.5rem;
         }
 
         #layout {
-            font-size: 24px;
+            font-size: 21px;
             margin-right: 16px
         }
     }
@@ -60,7 +62,7 @@
             width: 32%;
 
             img {
-                @include image($h: 255px, $w: 470px);
+                @include image($h: fit-content, $w: 98%);
             }
 
             .title {
@@ -98,221 +100,25 @@
     }
 }
 
-@media (max-width:1710px) {
-    .container .boxes-container .box img {
-        @include image($h: 240px, $w: 395px);
-    }
-
-    .navbar ul {
-        li {
-            font-size: 17px;
-            margin: 18px 2px;
-            width: 6.6%
-        }
-
-        #layout {
-            font-size: 23px
-        }
-    }
-
-}
-
-@media (max-width:1532px) {
-    .container .boxes-container .box img {
-        @include image($h: 220px, $w: 405px);
-    }
-
-    .navbar ul li {
-        width: 8.3%
-    }
-}
-
-@media (max-width:1491px) {
-    .container .boxes-container .box img {
-        @include image($h: 220px, $w: 382px);
-    }
-}
-
-@media (max-width:1420px) {
-    .container .boxes-container .box img {
-        @include image($h: 210px, $w: 370px);
-    }
-}
-
-@media (max-width:1397px) {
-    .container .boxes-container .box img {
-        @include image($h: 210px, $w: 345px);
-    }
-}
-
-@media (max-width:1300px) {
-    .container .boxes-container .box img {
-        @include image($h: 200px, $w: 335px);
-    }
-}
-
-@media (max-width:1240px) {
-    .container .boxes-container .box img {
-        @include image($h: 200px, $w: 318px);
-    }
-}
-
-@media (max-width:1230px) {
+@media (max-width:1050px) {
     .container .boxes-container .box {
-        margin: 14px 9px;
-        width: 31%;
-
-        img {
-            @include image($h: 180px, $w: 302px);
-        }
-    }
-
-    .navbar ul li {
-        font-size: 20px;
-        width: 11%
-    }
-}
-
-@media (max-width:1102px) {
-    .container .boxes-container .box {
-        margin: 14px 9px;
-        width: 30%;
-
-        img {
-            @include image($h: 287px, $w: 237px);
-        }
-    }
-}
-
-@media (max-width:1142px) {
-    .container .boxes-container .box {
-        margin: 14px 9px;
-        width: 30%;
-
-        img {
-            @include image($h: 183px, $w: 260px);
-        }
-    }
-}
-
-@media (max-width:990px) {
-    .container .boxes-container .box img {
-        @include image($h: 190px, $w: 241px);
-    }
-
-    .navbar ul li {
-        width: 11.3%
-    }
-}
-
-@media (max-width:894px) {
-    .container .boxes-container .box {
-        margin: 10px;
-        width: 46%;
-
-        img {
-            @include image($h: 201px, $w: 336px);
-        }
-    }
-
-    .navbar ul li {
-        width: 13.5%
-    }
-}
-
-@media (max-width:821px) {
-    .container {
-        h4 {
-            font-size: 31px;
+        .title {
+            font-size: 23px;
         }
 
-        span {
-            font-size: 19px
+        .des {
+            font-size: 13px;
         }
-
-        hr {
-            width: 91.9%
-        }
-
-        .boxes-container .box {
-            margin: 9px 1px;
-            width: 46%;
-
-            img {
-                @include image($h: 173px, $w: 291px);
-            }
-
-            .title {
-                font-size: 22px;
-                margin-top: 6px
-            }
-        }
-    }
-
-    .navbar ul li {
-        margin: 19px 5px;
-        width: 13.5%
-    }
-}
-
-@media (max-width:751px) {
-    .container .boxes-container .box img {
-        @include image($h: 153px, $w: 258px);
-    }
-
-    .navbar ul li {
-        margin: 20px 5px;
-        width: 15%
-    }
-}
-
-@media (max-width:698px) {
-    .container .boxes-container .box img {
-        @include image($h: 154px, $w: 243px);
-    }
-
-    .navbar ul li {
-        margin: 20px 5px;
-        width: 17%
     }
 }
 
 @media (max-width:624px) {
     .container .boxes-container .box {
-        width: 44%;
-
-        img {
-            @include image($h: 131px, $w: 220px);
-        }
+        width: 48%;
     }
 }
 
-@media (max-width:602px) {
-    .navbar ul {
-        width: 89%;
-
-        li {
-            font-size: 22px;
-            margin: 15px 6px;
-            width: 18%;
-        }
-
-        #layout {
-            font-size: 23px;
-            margin-right: 16px
-        }
-    }
-
-    .container .boxes-container .box {
-        width: 45%;
-
-        img {
-            @include image($h: 145px, $w: 206px);
-        }
-    }
-}
-
-@media (max-width:535px) {
+@media (max-width:588px) {
     .container {
         h4 {
             font-size: 34px;
@@ -323,17 +129,8 @@
             font-size: 17px;
         }
 
-        hr {
-            width: 95.9%;
-        }
-
         .boxes-container .box {
-            margin: 15px 0;
             width: 100%;
-
-            img {
-                @include image($h: 188px, $w: 96%);
-            }
         }
     }
 
@@ -344,7 +141,7 @@
         li {
             font-size: 18px;
             @include margin;
-            padding: 7px;
+            padding: 8px;
         }
 
         #layout {
@@ -355,28 +152,7 @@
 
 }
 
-@media (max-width:444px) {
-    .navbar ul li {
-        font-size: 16px;
-        width: 22%
-    }
-}
-
-@media (max-width:409px) {
-    .navbar ul {
-        li {
-            padding: 4px;
-            width: 21%;
-            font-size: 14px;
-        }
-
-        #layout {
-            font-size: 15px
-        }
-    }
-}
-
-@media (max-width:358px) {
+@media (max-width:453px) {
     .container {
         h4 {
             font-size: 25px;
@@ -386,27 +162,40 @@
             font-size: 14px;
         }
     }
+}
+
+@media (max-width:409px) {
+    .navbar ul {
+        li {
+            padding: 5px;
+            font-size: 12px;
+
+        }
+
+        #layout {
+            font-size: 14px
+        }
+
+    }
+}
+
+@media (max-width:358px) {
+    .container {
+        h4 {
+            font-size: 18px;
+        }
+
+        span {
+            font-size: 10px;
+        }
+    }
 
     .navbar ul li {
         font-size: 13px;
-        width: 22%
     }
 }
 
 @media (max-width:314px) {
-    .navbar ul {
-        li {
-            width: 23%;
-            font-size: 15px;
-        }
-
-        #layout {
-            font-size: 16px
-        }
-    }
-}
-
-@media (max-width:262px) {
     .navbar ul {
         li {
             font-size: 11px;
