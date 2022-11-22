@@ -12,13 +12,13 @@
     width: 100%;
 
     ul {
+
         display: $display;
         @include margin;
         width: 85%;
         justify-content: flex-start;
-    }
 
-    ul {
+
         li {
             color: $licolor;
             font-size: 17px;
@@ -26,11 +26,53 @@
             list-style: none;
             margin: 1rem 0px;
             padding: 0.5rem;
+
+            @include for-mid-phone-only {
+                font-size: 13px;
+            }
         }
 
         #layout {
             font-size: 21px;
             margin-right: 16px
+        }
+
+        @include for-mid-tablet-only {
+            flex-direction: column;
+            justify-content: center;
+
+            li {
+                font-size: 18px;
+                @include margin;
+                padding: 8px;
+            }
+
+            #layout {
+                font-size: 18px;
+                margin: auto
+            }
+        }
+
+        @include for-big-phone-only {
+            li {
+                padding: 5px;
+                font-size: 12px;
+
+            }
+
+            #layout {
+                font-size: 14px
+            }
+        }
+
+        @include for-small-phone-only {
+            li {
+                font-size: 11px;
+            }
+
+            #layout {
+                font-size: 13px
+            }
         }
     }
 }
@@ -42,13 +84,38 @@
     h4 {
         color: $h4color;
         font-size: 40px;
-        font-weight: 400
+        font-weight: 400;
+
+        @include for-mid-tablet-only {
+            font-size: 34px;
+            text-align: center;
+        }
+
+        @include for-small-tablet-only {
+            font-size: 25px;
+        }
+
+        @include for-mid-phone-only {
+            font-size: 18px;
+        }
     }
 
     span {
         color: $spancolor;
         font-size: 26px;
-        font-weight: 500
+        font-weight: 500;
+
+        @include for-mid-tablet-only {
+            font-size: 17px;
+        }
+
+        @include for-small-tablet-only {
+            font-size: 14px;
+        }
+
+        @include for-mid-phone-only {
+            font-size: 10px;
+        }
     }
 
     .boxes-container {
@@ -61,20 +128,38 @@
             margin-bottom: 15px;
             width: 32%;
 
-            img {
-                @include image($h: fit-content, $w: 98%);
+            @include for-big-tablet-only {
+                width: 48%;
+            }
+
+            @include for-mid-tablet-only {
+                width: 100%;
             }
 
             .title {
                 color: $titlecolor;
                 font-size: 29px;
-                margin-top: 10px
+                margin-top: 10px;
+
+                @include for-small-desktop-only {
+                    font-size: 23px;
+
+                }
             }
 
             .des {
                 color: $discriptioncolor;
                 font-size: 17px;
-                margin-top: 8px
+                margin-top: 8px;
+
+                @include for-small-desktop-only {
+                    font-size: 13px;
+
+                }
+            }
+
+            img {
+                @include image($h: fit-content, $w: 98%);
             }
         }
 
@@ -97,112 +182,5 @@
 
     .text {
         color: $footertextcolor;
-    }
-}
-
-@media (max-width:1050px) {
-    .container .boxes-container .box {
-        .title {
-            font-size: 23px;
-        }
-
-        .des {
-            font-size: 13px;
-        }
-    }
-}
-
-@media (max-width:624px) {
-    .container .boxes-container .box {
-        width: 48%;
-    }
-}
-
-@media (max-width:588px) {
-    .container {
-        h4 {
-            font-size: 34px;
-            text-align: center;
-        }
-
-        span {
-            font-size: 17px;
-        }
-
-        .boxes-container .box {
-            width: 100%;
-        }
-    }
-
-    .navbar ul {
-        flex-direction: column;
-        justify-content: center;
-
-        li {
-            font-size: 18px;
-            @include margin;
-            padding: 8px;
-        }
-
-        #layout {
-            font-size: 18px;
-            margin: auto
-        }
-    }
-
-}
-
-@media (max-width:453px) {
-    .container {
-        h4 {
-            font-size: 25px;
-        }
-
-        span {
-            font-size: 14px;
-        }
-    }
-}
-
-@media (max-width:409px) {
-    .navbar ul {
-        li {
-            padding: 5px;
-            font-size: 12px;
-
-        }
-
-        #layout {
-            font-size: 14px
-        }
-
-    }
-}
-
-@media (max-width:358px) {
-    .container {
-        h4 {
-            font-size: 18px;
-        }
-
-        span {
-            font-size: 10px;
-        }
-    }
-
-    .navbar ul li {
-        font-size: 13px;
-    }
-}
-
-@media (max-width:314px) {
-    .navbar ul {
-        li {
-            font-size: 11px;
-        }
-
-        #layout {
-            font-size: 13px
-        }
     }
 }
