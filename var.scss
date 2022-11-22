@@ -1,0 +1,65 @@
+$display: flex;
+$navbarcolor: #222;
+$licolor: #efe0e0;
+$h4color: #283342;
+$spancolor: #7c7171;
+$imgcolor: #ccc;
+$titlecolor: #71b2e2;
+$discriptioncolor: #4a5564;
+$footertextcolor: #283342;
+$hrcolor: #f3f0f0;
+$font: 'Montserrat', sans-serif;
+
+@mixin margin {
+    margin: auto;
+}
+
+@mixin image($h: auto, $w: auto) {
+    height: $h;
+    width: $w;
+}
+
+
+
+
+@mixin for-small-phone-only {
+    @media (max-width: 314px) {
+        @content;
+    }
+}
+
+@mixin for-mid-phone-only {
+    @media (max-width: 358px) {
+        @content;
+    }
+}
+
+@mixin for-big-phone-only {
+    @media (max-width: 409px) {
+        @content;
+    }
+}
+
+@mixin for-small-tablet-only {
+    @media (max-width: 453px) {
+        @content;
+    }
+}
+
+@mixin for-mid-tablet-only {
+    @media (max-width: 588px) {
+        @content;
+    }
+}
+
+@mixin for-big-tablet-only {
+    @media (max-width: 624px) {
+        @content;
+    }
+}
+
+@mixin for-small-desktop-only {
+    @media (max-width: 1050px) {
+        @content;
+    }
+}
